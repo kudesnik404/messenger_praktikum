@@ -1,0 +1,45 @@
+{
+  "name": "messenger_praktikum",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "stylelint": "stylelint 'src/**/*.{scss,css}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kudesnik404/messenger_praktikum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kudesnik404/messenger_praktikum/issues"
+  },
+  "homepage": "https://github.com/kudesnik404/messenger_praktikum#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "sass": "^1.99.0",
+    "stylelint": "^17.11.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.1.1",
+    "typescript-eslint": "^8.59.3",
+    "vite": "^8.0.12",
+    "vite-plugin-handlebars": "^2.0.3",
+    "vitest": "^4.1.6"
+  }
+}
