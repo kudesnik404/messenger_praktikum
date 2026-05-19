@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "lint": "eslint src --ext .ts",
-    "stylelint": "stylelint 'src/**/*.{scss,css}'"
+    "lint": "eslint styles --ext .ts",
+    "stylelint": "stylelint 'styles/**/*.{scss,css}'"
   },
   "repository": {
     "type": "git",

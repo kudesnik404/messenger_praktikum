@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Messenger</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мессенджер</title>
+    <link rel="stylesheet" href="styles/pages/index.scss" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-<div id="app"></div>
-<script type="module" src="/src/main.ts"></script>
+<div id="root" class="page layout">
+<aside class="sidebar text-M">
+    <button class="sidebar__profile-button">Профиль</button>
+    <label class="sidebar__search">
+        <input type="search" placeholder="Поиск">
+    </label>
+    <div class="sidebar__chat-list">
+        <div class="sidebar__chat-list__item">
+<!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Андрей</p>
+            <p class="sidebar__chat-list__item__text">Изображение</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+            <div class="sidebar__chat-list__item__notification">2</div>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Киноклуб</p>
+            <p class="sidebar__chat-list__item__text"><span>Вы: </span>стикер</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Илья</p>
+            <p class="sidebar__chat-list__item__text">Друзья, у меня для вас особенный выпуск новостей!</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">тет-а-теты</p>
+            <p class="sidebar__chat-list__item__text">И Human Interface Guidelines и Material Design рекомендуют И Human Interface Guidelines и Material Design рекомендуют</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+            <div class="sidebar__chat-list__item__notification">1</div>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">1, 2, 3</p>
+            <p class="sidebar__chat-list__item__text">Миллионы россиян ежедневно проводят десятки часов свое. Миллионы россиян ежедневно проводят десятки часов свое.</p>
+            <p class="sidebar__chat-list__item__time text-S">Пт</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item sidebar__chat-list__item-chosen">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Вадим</p>
+            <p class="sidebar__chat-list__item__text"><span>Вы: </span>Круто!</p>
+            <p class="sidebar__chat-list__item__time text-S">Ср</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Андрей</p>
+            <p class="sidebar__chat-list__item__text"><span>Вы: </span>Друзья, у меня для вас особенный выпуск новостей! Друзья, у меня для вас особенный выпуск новостей!</p>
+            <p class="sidebar__chat-list__item__time text-S">1 Мая 2020</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Андрей</p>
+            <p class="sidebar__chat-list__item__text"><span>Вы: </span>Друзья, у меня для вас особенный выпуск новостей! Друзья, у меня для вас особенный выпуск новостей!</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+        </div>
+        <hr>
+        <div class="sidebar__chat-list__item">
+            <!--            <img src="" alt="" class="sidebar__chat-list__item__avatar">-->
+            <div class="sidebar__chat-list__item__avatar"></div>
+            <p class="sidebar__chat-list__item__name text-L">Андрей</p>
+            <p class="sidebar__chat-list__item__text"><span>Вы: </span>Друзья, у меня для вас особенный выпуск новостей! Друзья, у меня для вас особенный выпуск новостей!</p>
+            <p class="sidebar__chat-list__item__time text-S">10:49</p>
+            <div class="sidebar__chat-list__item__notification">15</div>
+        </div>
+    </div>
+</aside>
+
+    <div class="chat">
+        <div class="chat__header"></div>
+        <div class="chat__body">
+            <div class="chat__body__text chat__body__text_sent">Good morning!</div>
+            <div class="chat__body__text chat__body__text_received">Hello!</div>
+        </div>
+        <div class="chat__bar">
+            <label>
+                <input class="chat__bar__input" type="text">
+            </label>
+            <button class="chat__bar__send-button"></button>
+        </div>
+    </div>
+</div>
+<script type="module" src="index.js"></script>
 </body>
 </html>
