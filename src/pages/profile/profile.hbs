@@ -1,136 +1,179 @@
-<div class="profile-page">
-    <div class="profile">
+<main class="profile-page">
+  <nav>
+    <a class="profile-page__go-back" href="#">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="14" transform="rotate(-180 14 14)" fill="#f333a9"/>
+        <rect x="20" y="14.8" width="11" height="1.6" transform="rotate(-180 20 14.8)" fill="white"/>
+        <path d="M13 19L9 14L13 9" stroke="white" stroke-width="1.6"/>
+      </svg>
+    </a>
+  </nav>
 
-        <div class="profile__avatar-wrapper">
-            <div class="profile__avatar">
-                {{#if isEditMode}}
-                    <div class="profile__avatar-overlay">
-                        Поменять аватар
-                    </div>
-                {{/if}}
-            </div>
-        </div>
+  <div class="profile">
 
-        <h1
-                class="
-        profile__title
+    <form
+      class="profile__avatar-wrapper"
+      id="avatarForm"
+    >
+      <div class="profile__avatar">
+
         {{#if isEditMode}}
-            profile__title_hidden
+          <label class="profile__avatar-overlay">
+            Поменять аватар
+
+            <input
+              type="file"
+              name="avatar"
+              class="profile__avatar-input"
+              accept="image/*"
+            >
+          </label>
         {{/if}}
-    "
-        >
-            {{display_name}}
-        </h1>
 
-        <div class="profile__fields text-L">
+      </div>
+    </form>
 
-            {{#if isPasswordMode}}
+    <h1
+      class="
+                profile__title
+                {{#if isEditMode}}
+                    profile__title_hidden
+                {{/if}}
+            "
+    >
+      {{display_name}}
+    </h1>
 
-                <div class="profile__field">
+    {{#if isPasswordMode}}
+
+      <form
+        class="profile__fields text-L"
+        id="passwordForm"
+      >
+
+        <div class="profile__field">
                     <span class="profile__field-name">
                         Старый пароль
                     </span>
 
-                    <input
-                            class="profile__input"
-                            type="password"
-                            name="old_password"
-                    >
-                </div>
+          <input
+            class="profile__input"
+            type="password"
+            name="old_password"
+            autocomplete="current-password"
+          >
+        </div>
 
-                <div class="profile__field">
+        <div class="profile__field">
                     <span class="profile__field-name">
                         Новый пароль
                     </span>
 
-                    <input
-                            class="profile__input"
-                            type="password"
-                            name="new_password"
-                    >
-                </div>
+          <input
+            class="profile__input"
+            type="password"
+            name="new_password"
+            autocomplete="new-password"
+          >
+        </div>
 
-                <div class="profile__field">
+        <div class="profile__field">
                     <span class="profile__field-name">
                         Повторите новый пароль
                     </span>
 
-                    <input
-                            class="profile__input"
-                            type="password"
-                            name="repeat_password"
-                    >
-                </div>
+          <input
+            class="profile__input"
+            type="password"
+            name="repeat_password"
+            autocomplete="new-password"
+          >
+        </div>
 
-            {{else}}
+        <button
+          type="submit"
+          class="profile__button"
+        >
+          Сохранить
+        </button>
 
-                {{#each fields}}
-                    <div class="profile__field">
+      </form>
+
+    {{else}}
+
+      <form
+        class="profile__fields text-L"
+        id="profileForm"
+      >
+
+        {{#each fields}}
+          <div class="profile__field">
+
                         <span class="profile__field-name">
-                            {{this.label}}
+                          {{this.label}}
                         </span>
 
-                        {{#if ../isEditMode}}
-                            <input
-                                    class="profile__input"
-                                    name="{{this.name}}"
-                                    value="{{this.value}}"
-                            >
-                        {{else}}
-                            <span class="profile__field-value">
-                                {{this.value}}
-                            </span>
-                        {{/if}}
-                    </div>
-                {{/each}}
-
+            {{#if ../isEditMode}}
+              <input
+                class="profile__input"
+                name="{{this.name}}"
+                value="{{this.value}}"
+                autocomplete="off"
+              >
+            {{else}}
+              <span class="profile__field-value">
+                {{this.value}}
+              </span>
             {{/if}}
 
-        </div>
+          </div>
+        {{/each}}
+
+        {{#if isEditMode}}
+          <button
+            type="submit"
+            class="profile__button"
+          >
+            Сохранить
+          </button>
+        {{/if}}
+
+      </form>
+
+    {{/if}}
+
+    {{#unless isEditMode}}
+      {{#unless isPasswordMode}}
 
         <div class="profile__actions text-L">
 
-            {{#if isEditMode}}
-                <button
-                        class="profile__button"
-                        id="saveProfileButton"
-                >
-                    Сохранить
-                </button>
+          <button
+            class="profile__link-button"
+            id="editProfileButton"
+            type="button"
+          >
+            Изменить данные
+          </button>
 
-            {{else if isPasswordMode}}
+          <button
+            class="profile__link-button"
+            id="changePasswordButton"
+            type="button"
+          >
+            Поменять пароль
+          </button>
 
-                <button
-                        class="profile__button"
-                        id="savePasswordButton"
-                >
-                    Сохранить
-                </button>
-
-            {{else}}
-
-                <button
-                        class="profile__link-button"
-                        id="editProfileButton"
-                >
-                    Изменить данные
-                </button>
-
-                <button
-                        class="profile__link-button"
-                        id="changePasswordButton"
-                >
-                    Поменять пароль
-                </button>
-
-                <button
-                        class="profile__link-button profile__exit-button"
-                >
-                    Выйти
-                </button>
-
-            {{/if}}
+          <button
+            class="profile__link-button profile__exit-button"
+            type="button"
+          >
+            Выйти
+          </button>
 
         </div>
-    </div>
-</div>
+
+      {{/unless}}
+    {{/unless}}
+
+  </div>
+</main>
