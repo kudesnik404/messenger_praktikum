@@ -8,32 +8,39 @@
 * SCSS
 * Vite
 * Handlebars
-* ESLint
-* Stylelint
 
 ## Установка
 
-```bash
+```bash id="m2whv4"
 npm install
 ```
 
 ## Запуск проекта
 
-```bash
+```bash id="5y6s2d"
 npm run start
 ```
 
 Проект будет доступен по адресу:
 
-```text
+```text id="q9f7x1"
 http://localhost:3000
 ```
 
 ## Сборка проекта
 
-```bash
+```bash id="r0v2gn"
 npm run build
 ```
+
+## Страницы
+
+* Чаты — `/#/`
+* Вход — `/#/login`
+* Регистрация — `/#/register`
+* Профиль — `/#/profile`
+* Ошибка 404 — `/#/404`
+* Ошибка 500 — `/#/500`
 
 ## Netlify
 
