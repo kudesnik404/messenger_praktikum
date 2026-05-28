@@ -3,3 +3,5 @@ declare module "*.hbs?raw" {
 
   export default template;
 }
+
+declare module "*.scss";

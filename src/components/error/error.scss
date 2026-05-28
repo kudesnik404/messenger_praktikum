@@ -1,10 +1,8 @@
 .error {
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
@@ -19,5 +17,5 @@
 }
 
 .error__link {
-  color: var(--color--accent);
+  color: var(--color-accent);
 }

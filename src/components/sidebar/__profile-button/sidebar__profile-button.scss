@@ -3,11 +3,11 @@
   margin-top: 11px;
   align-self: end;
   width: fit-content;
-  color: var(--color--text-secondary);
+  color: var(--color-text-secondary);
   transition: var(--animation);
 
   &:hover {
     cursor: pointer;
-    color: var(--color--accent);
+    color: var(--color-accent);
   }
 }
