@@ -46,5 +46,8 @@
     "vite": "^8.0.12",
     "vite-plugin-handlebars": "^2.0.3",
     "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
