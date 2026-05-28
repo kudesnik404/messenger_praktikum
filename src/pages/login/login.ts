@@ -16,11 +16,13 @@ export const renderLoginPage = (): string => {
             label: "Логин",
             type: "text",
             name: "login",
+            autocomplete: "username",
           },
           {
             label: "Пароль",
             type: "password",
             name: "password",
+            autocomplete: "current-password",
           },
         ],
       })}

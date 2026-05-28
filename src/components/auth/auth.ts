@@ -8,6 +8,7 @@ interface AuthField {
   label: string;
   type: string;
   name: string;
+  autocomplete: string;
 }
 
 interface AuthFormProps {

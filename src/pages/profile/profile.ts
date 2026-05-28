@@ -39,31 +39,37 @@ export const renderProfilePage = (): string => {
         label: "Почта",
         name: "email",
         value: profileData.email,
+        autocomplete: "email",
       },
       {
         label: "Логин",
         name: "login",
         value: profileData.login,
+        autocomplete: "username",
       },
       {
         label: "Имя",
         name: "first_name",
         value: profileData.first_name,
+        autocomplete: "given-name",
       },
       {
         label: "Фамилия",
         name: "second_name",
         value: profileData.second_name,
+        autocomplete: "family-name",
       },
       {
         label: "Имя в чате",
         name: "display_name",
         value: profileData.display_name,
+        autocomplete: "nickname",
       },
       {
         label: "Телефон",
         name: "phone",
         value: profileData.phone,
+        autocomplete: "tel",
       },
     ],
   });
@@ -84,31 +90,40 @@ export const initProfilePage = (): void => {
 
   const changePasswordButton = document.getElementById("changePasswordButton");
 
-  const saveProfileButton = document.getElementById("saveProfileButton");
+  const profileForm = document.getElementById(
+    "profileForm",
+  ) as HTMLFormElement | null;
 
-  const savePasswordButton = document.getElementById("savePasswordButton");
+  const passwordForm = document.getElementById(
+    "passwordForm",
+  ) as HTMLFormElement | null;
 
   editButton?.addEventListener("click", () => {
     isEditMode = true;
+    isPasswordMode = false;
 
     rerender();
   });
 
   changePasswordButton?.addEventListener("click", () => {
     isPasswordMode = true;
+    isEditMode = false;
 
     rerender();
   });
 
-  saveProfileButton?.addEventListener("click", () => {
-    const inputs = document.querySelectorAll<HTMLInputElement>(
-      ".profile-card__input",
-    );
+  profileForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const inputs =
+      profileForm.querySelectorAll<HTMLInputElement>(".profile__input");
 
     inputs.forEach((input) => {
       const key = input.name as keyof ProfileData;
 
-      profileData[key] = input.value;
+      if (key in profileData) {
+        profileData[key] = input.value;
+      }
     });
 
     isEditMode = false;
@@ -116,7 +131,9 @@ export const initProfilePage = (): void => {
     rerender();
   });
 
-  savePasswordButton?.addEventListener("click", () => {
+  passwordForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     isPasswordMode = false;
 
     rerender();

@@ -4,9 +4,9 @@
   "description": "---",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "start": "vite build && vite preview",
     "preview": "vite preview",
     "test": "vitest",
     "lint": "eslint .",
