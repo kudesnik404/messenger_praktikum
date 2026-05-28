@@ -56,7 +56,7 @@
   }
 
   &:is(:not(.sidebar__chat-list__item-chosen)):hover {
-    cursor: pointer
+    cursor: pointer;
   }
 }
 

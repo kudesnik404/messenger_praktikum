@@ -1,18 +1,16 @@
-import Handlebars from 'handlebars';
+import Handlebars from "handlebars";
 
-import template from './error.hbs?raw';
+import template from "./error.hbs?raw";
 
-import './error.scss';
+import "./error.scss";
 
 interface ErrorPageProps {
-    code: string;
-    message: string;
+  code: string;
+  message: string;
 }
 
-export const renderErrorPage = (
-    props: ErrorPageProps,
-): string => {
-    const compiledTemplate = Handlebars.compile(template);
+export const renderErrorPage = (props: ErrorPageProps): string => {
+  const compiledTemplate = Handlebars.compile(template);
 
-    return compiledTemplate(props);
+  return compiledTemplate(props);
 };

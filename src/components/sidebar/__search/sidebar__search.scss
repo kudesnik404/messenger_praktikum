@@ -16,7 +16,8 @@
       text-align: center;
     }
 
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       outline: var(--border-focus);
     }
   }
