@@ -7,7 +7,6 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "import", "stylelint-scss"],
   extends: [
-    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "stylelint-config-standard-scss",
   ],
@@ -19,6 +18,7 @@ module.exports = {
     // code quality
     "no-console": "warn",
     "no-unused-vars": "off",
+    "no-empty-source": null,
     "@typescript-eslint/no-unused-vars": ["error"],
 
     // style consistency
