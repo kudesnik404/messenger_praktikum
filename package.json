@@ -9,6 +9,7 @@
     "start": "vite build && vite preview",
     "preview": "vite preview",
     "test": "vitest",
+    "check-types": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint 'src/**/*.{scss,css}'"
@@ -36,6 +37,7 @@
     "@typescript-eslint/parser": "^8.59.3",
     "eslint": "^10.4.0",
     "globals": "^17.6.0",
+    "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
     "sass": "^1.100.0",
     "stylelint": "^17.11.0",
