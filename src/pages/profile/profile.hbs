@@ -1,0 +1,136 @@
+<div class="profile-page">
+    <div class="profile">
+
+        <div class="profile__avatar-wrapper">
+            <div class="profile__avatar">
+                {{#if isEditMode}}
+                    <div class="profile__avatar-overlay">
+                        Поменять аватар
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <h1
+                class="
+        profile__title
+        {{#if isEditMode}}
+            profile__title_hidden
+        {{/if}}
+    "
+        >
+            {{display_name}}
+        </h1>
+
+        <div class="profile__fields text-L">
+
+            {{#if isPasswordMode}}
+
+                <div class="profile__field">
+                    <span class="profile__field-name">
+                        Старый пароль
+                    </span>
+
+                    <input
+                            class="profile__input"
+                            type="password"
+                            name="old_password"
+                    >
+                </div>
+
+                <div class="profile__field">
+                    <span class="profile__field-name">
+                        Новый пароль
+                    </span>
+
+                    <input
+                            class="profile__input"
+                            type="password"
+                            name="new_password"
+                    >
+                </div>
+
+                <div class="profile__field">
+                    <span class="profile__field-name">
+                        Повторите новый пароль
+                    </span>
+
+                    <input
+                            class="profile__input"
+                            type="password"
+                            name="repeat_password"
+                    >
+                </div>
+
+            {{else}}
+
+                {{#each fields}}
+                    <div class="profile__field">
+                        <span class="profile__field-name">
+                            {{this.label}}
+                        </span>
+
+                        {{#if ../isEditMode}}
+                            <input
+                                    class="profile__input"
+                                    name="{{this.name}}"
+                                    value="{{this.value}}"
+                            >
+                        {{else}}
+                            <span class="profile__field-value">
+                                {{this.value}}
+                            </span>
+                        {{/if}}
+                    </div>
+                {{/each}}
+
+            {{/if}}
+
+        </div>
+
+        <div class="profile__actions text-L">
+
+            {{#if isEditMode}}
+                <button
+                        class="profile__button"
+                        id="saveProfileButton"
+                >
+                    Сохранить
+                </button>
+
+            {{else if isPasswordMode}}
+
+                <button
+                        class="profile__button"
+                        id="savePasswordButton"
+                >
+                    Сохранить
+                </button>
+
+            {{else}}
+
+                <button
+                        class="profile__link-button"
+                        id="editProfileButton"
+                >
+                    Изменить данные
+                </button>
+
+                <button
+                        class="profile__link-button"
+                        id="changePasswordButton"
+                >
+                    Поменять пароль
+                </button>
+
+                <button
+                        class="profile__link-button profile__exit-button"
+                >
+                    Выйти
+                </button>
+
+            {{/if}}
+
+        </div>
+    </div>
+</div>

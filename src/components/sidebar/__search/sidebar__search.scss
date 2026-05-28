@@ -1,0 +1,23 @@
+.sidebar__search {
+  display: block;
+  margin: var(--container-aside);
+  margin-bottom: 2px;
+  padding-bottom: 14px;
+  border-bottom: var(--border);
+
+  & input {
+    padding: var(--container-aside);
+    width: 100%;
+    background-color: var(--color--background-interactable);
+    border-radius: var(--border-radius);
+
+    &::placeholder {
+      color: var(--color--text-secondary);
+      text-align: center;
+    }
+
+    &:focus, &:focus-visible {
+      outline: var(--border-focus);
+    }
+  }
+}

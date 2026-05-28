@@ -1,0 +1,14 @@
+.chat__bar__input {
+  width: 100%;
+
+  & input {
+    width: 100%;
+    background-color: var(--color--background-interactable);
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    &::placeholder {
+      color: var(--color--text-secondary);
+    }
+  }
+}
