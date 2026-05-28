@@ -1,26 +1,20 @@
-//components
-@import '/src/components/sidebar/sidebar.scss';
-@import '/src/components/sidebar/__profile-button/sidebar__profile-button.scss';
-@import '/src/components/sidebar/__search/sidebar__search.scss';
-@import '/src/components/sidebar/__chat-list/sidebar__chat-list.scss';
-@import '/src/components/sidebar/__chat-list/__item/sidebar__chat-list__item.scss';
+// components
+@import "/src/components/sidebar/sidebar";
+@import "/src/components/sidebar/__profile-button/sidebar__profile-button";
+@import "/src/components/sidebar/__search/sidebar__search";
+@import "/src/components/sidebar/__chat-list/sidebar__chat-list";
+@import "/src/components/sidebar/__chat-list/__item/sidebar__chat-list__item";
+@import "/src/components/chat/chat";
+@import "/src/components/chat/__header/chat__header";
+@import "/src/components/chat/__body/chat__body";
+@import "/src/components/chat/__body/__block/chat__body__block";
+@import "/src/components/chat/__body/__block/__date/chat__body__block__date";
+@import "/src/components/chat/__body/__block/__text/chat__body__block__text";
+@import "/src/components/chat/__bar/chat__bar";
+@import "/src/components/chat/__bar/__input/chat__bar__input";
+@import "/src/components/chat/__header/__interlocutor/chat__header__interlocutor";
+@import "/src/components/chat/__header/__interlocutor/chat__header__interlocutor-avatar";
+@import "/src/components/chat/__header/__options/chat__header__options";
 
-@import '/src/components/chat/chat.scss';
-@import '/src/components/chat/__header/chat__header.scss';
-
-@import '/src/components/chat/__body/chat__body.scss';
-@import '/src/components/chat/__body/__block/chat__body__block.scss';
-@import '/src/components/chat/__body/__block/__date/chat__body__block__date.scss';
-@import '/src/components/chat/__body/__block/__text/chat__body__block__text.scss';
-
-@import '/src/components/chat/__bar/chat__bar.scss';
-@import '/src/components/chat/__bar/__input/chat__bar__input.scss';
-@import '/src/components/chat/__bar/__send-button/chat__bar__send-button.scss';
-
-@import '/src/components/chat/__header/__interlocutor/chat__header__interlocutor.scss';
-@import '/src/components/chat/__header/__interlocutor/chat__header__interlocutor-avatar.scss';
-@import '/src/components/chat/__header/__interlocutor/chat__header__interlocutor-name.scss';
-@import '/src/components/chat/__header/__options/chat__header__options.scss';
-
-//layouts
-@import '/src/layouts/main-layout.scss';
+// layouts
+@import "/src/layouts/main-layout";

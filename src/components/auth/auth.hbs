@@ -1,31 +1,39 @@
-<div class="auth">
-    <h1 class="auth__title text-XL">
-        {{title}}
-    </h1>
+<main class="auth">
+  <h1 class="auth__title text-XL">
+    {{title}}
+  </h1>
 
-    <form class="auth__body text-L">
-        {{#each fields}}
-            <label class="auth__body__label">
-                <input
-                        class="auth__body__input"
-                        type="{{this.type}}"
-                        name="{{this.name}}"
-                        placeholder="{{this.label}}"
-                >
-            </label>
-        {{/each}}
-    </form>
+  <form class="auth__body text-L">
+    {{#each fields}}
+      <label
+        class="auth__body__label"
+        for="{{this.name}}"
+      >
+        <input
+          class="auth__body__input"
+          id="{{this.name}}"
+          type="{{this.type}}"
+          name="{{this.name}}"
+          placeholder="{{this.label}}"
+          autocomplete="{{this.autocomplete}}"
+        />
+      </label>
+    {{/each}}
 
     <div class="auth__footer">
-        <button class="auth__footer__submit text-M">
-            {{buttonText}}
-        </button>
+      <button
+        type="submit"
+        class="auth__footer__submit text-M"
+      >
+        {{buttonText}}
+      </button>
 
-        <a
-                href="{{linkHref}}"
-                class="auth__footer__link text-S"
-        >
-            {{linkText}}
-        </a>
+      <a
+        href="{{linkHref}}"
+        class="auth__footer__link text-S"
+      >
+        {{linkText}}
+      </a>
     </div>
-</div>
+  </form>
+</main>

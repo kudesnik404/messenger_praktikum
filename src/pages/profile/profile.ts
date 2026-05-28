@@ -1,25 +1,25 @@
-import Handlebars from 'handlebars';
+import Handlebars from "handlebars";
 
-import template from './profile.hbs?raw';
+import template from "./profile.hbs?raw";
 
-import './profile.scss';
+import "./profile.scss";
 
 interface ProfileData {
-    first_name: string;
-    second_name: string;
-    display_name: string;
-    login: string;
-    email: string;
-    phone: string;
+  first_name: string;
+  second_name: string;
+  display_name: string;
+  login: string;
+  email: string;
+  phone: string;
 }
 
 const profileData: ProfileData = {
-    first_name: 'Иван',
-    second_name: 'Иванов',
-    display_name: 'Иван',
-    login: 'ivanivanov',
-    email: 'pochta@yandex.ru',
-    phone: '+7 (909) 967 30 30',
+  first_name: "Иван",
+  second_name: "Иванов",
+  display_name: "Иван",
+  login: "ivanivanov",
+  email: "pochta@yandex.ru",
+  phone: "+7 (909) 967 30 30",
 };
 
 let isEditMode = false;
@@ -28,105 +28,114 @@ let isPasswordMode = false;
 const compiledTemplate = Handlebars.compile(template);
 
 export const renderProfilePage = (): string => {
-    return compiledTemplate({
-        display_name: profileData.display_name,
+  return compiledTemplate({
+    display_name: profileData.display_name,
 
-        isEditMode,
-        isPasswordMode,
+    isEditMode,
+    isPasswordMode,
 
-        fields: [
-            {
-                label: 'Почта',
-                name: 'email',
-                value: profileData.email,
-            },
-            {
-                label: 'Логин',
-                name: 'login',
-                value: profileData.login,
-            },
-            {
-                label: 'Имя',
-                name: 'first_name',
-                value: profileData.first_name,
-            },
-            {
-                label: 'Фамилия',
-                name: 'second_name',
-                value: profileData.second_name,
-            },
-            {
-                label: 'Имя в чате',
-                name: 'display_name',
-                value: profileData.display_name,
-            },
-            {
-                label: 'Телефон',
-                name: 'phone',
-                value: profileData.phone,
-            },
-        ],
-    });
+    fields: [
+      {
+        label: "Почта",
+        name: "email",
+        value: profileData.email,
+        autocomplete: "email",
+      },
+      {
+        label: "Логин",
+        name: "login",
+        value: profileData.login,
+        autocomplete: "username",
+      },
+      {
+        label: "Имя",
+        name: "first_name",
+        value: profileData.first_name,
+        autocomplete: "given-name",
+      },
+      {
+        label: "Фамилия",
+        name: "second_name",
+        value: profileData.second_name,
+        autocomplete: "family-name",
+      },
+      {
+        label: "Имя в чате",
+        name: "display_name",
+        value: profileData.display_name,
+        autocomplete: "nickname",
+      },
+      {
+        label: "Телефон",
+        name: "phone",
+        value: profileData.phone,
+        autocomplete: "tel",
+      },
+    ],
+  });
 };
 
 const rerender = (): void => {
-    const app = document.querySelector('#app');
+  const app = document.querySelector("#app");
 
-    if (app) {
-        app.innerHTML = renderProfilePage();
+  if (app) {
+    app.innerHTML = renderProfilePage();
 
-        initProfilePage();
-    }
+    initProfilePage();
+  }
 };
 
 export const initProfilePage = (): void => {
-    const editButton = document.getElementById(
-        'editProfileButton',
-    );
+  const editButton = document.getElementById("editProfileButton");
 
-    const changePasswordButton = document.getElementById(
-        'changePasswordButton',
-    );
+  const changePasswordButton = document.getElementById("changePasswordButton");
 
-    const saveProfileButton = document.getElementById(
-        'saveProfileButton',
-    );
+  const profileForm = document.getElementById(
+    "profileForm",
+  ) as HTMLFormElement | null;
 
-    const savePasswordButton = document.getElementById(
-        'savePasswordButton',
-    );
+  const passwordForm = document.getElementById(
+    "passwordForm",
+  ) as HTMLFormElement | null;
 
-    editButton?.addEventListener('click', () => {
-        isEditMode = true;
+  editButton?.addEventListener("click", () => {
+    isEditMode = true;
+    isPasswordMode = false;
 
-        rerender();
+    rerender();
+  });
+
+  changePasswordButton?.addEventListener("click", () => {
+    isPasswordMode = true;
+    isEditMode = false;
+
+    rerender();
+  });
+
+  profileForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const inputs =
+      profileForm.querySelectorAll<HTMLInputElement>(".profile__input");
+
+    inputs.forEach((input) => {
+      const key = input.name as keyof ProfileData;
+
+      if (key in profileData) {
+        profileData[key] = input.value;
+      }
     });
 
-    changePasswordButton?.addEventListener('click', () => {
-        isPasswordMode = true;
+    isEditMode = false;
 
-        rerender();
-    });
+    rerender();
+  });
 
-    saveProfileButton?.addEventListener('click', () => {
-        const inputs = document.querySelectorAll<HTMLInputElement>(
-            '.profile-card__input',
-        );
+  passwordForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-        inputs.forEach((input) => {
-            const key = input.name as keyof ProfileData;
+    isPasswordMode = false;
 
-            profileData[key] = input.value;
-        });
-
-        isEditMode = false;
-
-        rerender();
-    });
-
-    savePasswordButton?.addEventListener('click', () => {
-        isPasswordMode = false;
-
-        rerender();
-    });
+    rerender();
+  });
 };
