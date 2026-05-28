@@ -8,8 +8,6 @@
 * SCSS
 * Vite
 * Handlebars
-* ESLint
-* Stylelint
 
 ## Установка
 
