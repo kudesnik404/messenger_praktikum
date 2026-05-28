@@ -1,0 +1,23 @@
+.error {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.error__code {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.error__message {
+  font-size: 20px;
+  margin: 20px 0 69px;
+}
+
+.error__link {
+  color: var(--color--accent);
+}
