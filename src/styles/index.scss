@@ -1,9 +1,10 @@
-body {
-  font-family: Inter, sans-serif;
-}
-
 @import "../layouts/container";
 @import "../utils/reset";
 @import "../utils/variables";
 @import "../utils/typography";
 @import "../utils/fonts/fonts";
+
+body {
+  font-family: Inter, sans-serif;
+}
+
