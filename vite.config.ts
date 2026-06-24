@@ -1,11 +1,14 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-    server: {
-        port: 3000,
-        strictPort: true,
-    },
-    test: {
-        environment: 'jsdom'
-    }
-})
+  server: {
+    port: 3000,
+    strictPort: true,
+  },
+  preview: {
+    port: 3000,
+  },
+  test: {
+    environment: "jsdom",
+  },
+});

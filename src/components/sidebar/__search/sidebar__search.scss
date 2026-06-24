@@ -8,15 +8,16 @@
   & input {
     padding: var(--container-aside);
     width: 100%;
-    background-color: var(--color--background-interactable);
+    background-color: var(--color-background-interactable);
     border-radius: var(--border-radius);
 
     &::placeholder {
-      color: var(--color--text-secondary);
+      color: var(--color-text-secondary);
       text-align: center;
     }
 
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       outline: var(--border-focus);
     }
   }

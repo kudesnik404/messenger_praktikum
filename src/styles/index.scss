@@ -1,10 +1,10 @@
+@import "../layouts/container";
+@import "../utils/reset";
+@import "../utils/variables";
+@import "../utils/typography";
+@import "../utils/fonts/fonts";
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
 }
 
-@import '/src/layouts/container.scss';
-
-@import '/src/utils/reset.scss';
-@import '/src/utils/variables.scss';
-@import '/src/utils/typography.scss';
-@import '/src/utils/fonts/fonts.scss';

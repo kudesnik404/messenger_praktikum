@@ -1,5 +1,7 @@
-declare module '*.hbs?raw' {
-    const template: string;
+declare module "*.hbs?raw" {
+  const template: string;
 
-    export default template;
+  export default template;
 }
+
+declare module "*.scss";

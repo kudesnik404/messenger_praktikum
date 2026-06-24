@@ -8,7 +8,7 @@
   border-radius: var(--border-radius-text);
 
   &-sent {
-    background-color: var(--color--background-accent);
+    background-color: var(--color-background-accent);
     border-bottom-right-radius: 0;
     align-self: end;
 
@@ -19,7 +19,7 @@
   }
 
   &-received {
-    background-color: var(--color--background-interactable);
+    background-color: var(--color-background-interactable);
     border-top-left-radius: 0;
 
     .chat__body__block__text_time-space {
@@ -31,7 +31,6 @@
   &_time-space {
     position: absolute;
     bottom: 0;
-    color: var(--color--text-secondary);
+    color: var(--color-text-secondary);
   }
-
 }

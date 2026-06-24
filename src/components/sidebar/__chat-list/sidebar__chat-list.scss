@@ -1,10 +1,8 @@
 .sidebar__chat-list {
   display: grid;
   grid-auto-rows: max-content;
-
   overflow-y: auto;
   scrollbar-width: thin;
-
   height: calc(100vh - 105px);
 
   hr {
@@ -12,7 +10,7 @@
     margin: 2px 0;
     height: 1px;
     width: calc(100% - 2 * var(--container-aside));
-    background-color: var(--color--border);
+    background-color: var(--color-border);
     justify-self: center;
   }
 }
